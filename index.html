@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sri SPS E-Bikes (Electric) - Save The Earth, Ride With Sri SPS E-Bikes (Electric). Premium electric scooters and bikes for sustainable transportation.">
+    <meta name="author" content="Sri SPS E-Bikes (Electric)">
+    <title>Save The Earth, Ride With Sri SPS E-Bikes (Electric)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919600230055" class="whatsapp-float" target="_blank" id="whatsappBtn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Phone Float Button -->
+    <a href="tel:+918220020922" class="phone-float" id="phoneBtn">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="mobile-toggle" id="hamburgerBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <a href="index.html" id="logoLink">
+                        <img src="" alt="Logo" id="siteLogoImg" style="display:none;">
+                        <h1 id="siteLogoText">SRI SPS</h1>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#store" class="store-btn" id="findStoreBtn" target="_blank" rel="noopener">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Find A Store</span>
+                    </a>
+                    <a href="admin/login.html" class="store-btn admin-btn">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Admin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <h2>SRI SPS</h2>
+            <button class="close-nav"><i class="fas fa-times"></i></button>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background: linear-gradient(120deg, #0a0a0a 0%, #141414 55%, #1c1c1c 100%);">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">New Launch 2024</span>
+                        <h1>Ride The Future With <span class="highlight">Sri SPS E-Bikes</span></h1>
+                        <p>Experience the thrill of electric mobility. Premium scooters designed for comfort, speed, and sustainability.</p>
+                        <div class="hero-buttons">
+                            <a href="#products" class="btn btn-primary">Explore Models</a>
+                            <a href="#contact" class="btn btn-secondary">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="scooter-placeholder">
+                            <i class="fas fa-motorcycle"></i>
+                            <span>G6 Electric</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background: linear-gradient(120deg, #050505 0%, #131313 55%, #1a1a1a 100%);">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">High Speed</span>
+                        <h1>Go Green, <span class="highlight">Go Electric</span></h1>
+                        <p>Save up to 80% on fuel costs. Zero emissions, maximum performance.</p>
+                        <div class="hero-buttons">
+                            <a href="#products" class="btn btn-primary">View Collection</a>
+                            <a href="#features" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="scooter-placeholder">
+                            <i class="fas fa-motorcycle"></i>
+                            <span>G5 Electric</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background: linear-gradient(120deg, #0a0a0a 0%, #151515 55%, #1e1e1e 100%);">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Comfort Speed</span>
+                        <h1>Save The Earth, <span class="highlight">Ride Smart</span></h1>
+                        <p>Comfortable daily commute with zero pollution. Join the electric revolution today.</p>
+                        <div class="hero-buttons">
+                            <a href="#products" class="btn btn-primary">Discover More</a>
+                            <a href="#about" class="btn btn-secondary">Our Story</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="scooter-placeholder">
+                            <i class="fas fa-motorcycle"></i>
+                            <span>Sniper Electric</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background: linear-gradient(120deg, #080808 0%, #121212 55%, #1b1b1b 100%);">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Long Range</span>
+                        <h1>Ride Longer, <span class="highlight">Charge Smarter</span></h1>
+                        <p>Extended battery range for uninterrupted journeys. Travel further with confidence.</p>
+                        <div class="hero-buttons">
+                            <a href="#products" class="btn btn-primary">View Battery</a>
+                            <a href="#features" class="btn btn-secondary">Compare Models</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="scooter-placeholder">
+                            <i class="fas fa-motorcycle"></i>
+                            <span>Warrior Electric</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background: linear-gradient(120deg, #060606 0%, #111111 55%, #191919 100%);">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Best Seller</span>
+                        <h1>Power Your <span class="highlight">Daily Ride</span></h1>
+                        <p>The perfect companion for everyday commutes. Affordable, reliable, and built to last.</p>
+                        <div class="hero-buttons">
+                            <a href="#products" class="btn btn-primary">Shop Now</a>
+                            <a href="#contact" class="btn btn-secondary">Get Offer</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="scooter-placeholder">
+                            <i class="fas fa-motorcycle"></i>
+                            <span>Partner Electric</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <button class="slider-btn active" data-slide="0"></button>
+            <button class="slider-btn" data-slide="1"></button>
+            <button class="slider-btn" data-slide="2"></button>
+            <button class="slider-btn" data-slide="3"></button>
+            <button class="slider-btn" data-slide="4"></button>
+        </div>
+        <button class="hero-arrow hero-arrow-prev" id="heroPrev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="hero-arrow hero-arrow-next" id="heroNext" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Collection</span>
+                <h2>Choose Your <span class="highlight">Electric Ride</span></h2>
+                <p>Explore our range of high-performance electric scooters</p>
+            </div>
+
+            <div class="product-category" id="highSpeedCategory">
+                <h3><i class="fas fa-bolt"></i> High Speed Models</h3>
+                <div class="products-grid" id="highSpeedProducts">
+                    <!-- Loaded dynamically from admin -->
+                </div>
+            </div>
+
+            <div class="product-category" id="comfortSpeedCategory">
+                <h3><i class="fas fa-feather-alt"></i> Comfort Speed Models</h3>
+                <div class="products-grid" id="comfortSpeedProducts">
+                    <!-- Loaded dynamically from admin -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 id="featuresTitle">The <span class="highlight">Sri SPS E-Bikes</span> Advantage</h2>
+                <p id="featuresSubtitle">Experience the best in electric mobility</p>
+            </div>
+
+            <div class="features-grid" id="featuresGrid">
+                <!-- Loaded dynamically from admin -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Savings Calculator Section -->
+    <section class="savings-section">
+        <div class="container">
+            <div class="savings-wrapper">
+                <div class="savings-content">
+                    <span class="section-tag" id="savingsTag">Calculate Your Savings</span>
+                    <h2 id="savingsTitle">How Much Can You <span class="highlight">Save?</span></h2>
+                    <p id="savingsSubtitle">Switch to electric and see your savings grow</p>
+                </div>
+                <div class="savings-cards">
+                    <div class="savings-card">
+                        <div class="savings-icon">
+                            <i class="fas fa-pump-soap"></i>
+                        </div>
+                        <div class="savings-info">
+                            <h4 id="savingsCard1Title">Fuel Savings</h4>
+                            <span class="savings-amount" id="savingsCard1Amount">₹60,000/year</span>
+                            <p id="savingsCard1Desc">Average savings on fuel costs</p>
+                        </div>
+                    </div>
+                    <div class="savings-card">
+                        <div class="savings-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="savings-info">
+                            <h4 id="savingsCard2Title">Maintenance Savings</h4>
+                            <span class="savings-amount" id="savingsCard2Amount">₹15,000/year</span>
+                            <p id="savingsCard2Desc">No engine oil, filters, etc.</p>
+                        </div>
+                    </div>
+                    <div class="savings-card">
+                        <div class="savings-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="savings-info">
+                            <h4 id="savingsCard3Title">Carbon Saved</h4>
+                            <span class="savings-amount" id="savingsCard3Amount">2.5 tons/year</span>
+                            <p id="savingsCard3Desc">Your contribution to clean air</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <div class="about-img-placeholder" id="aboutImage">
+                        <i class="fas fa-building"></i>
+                        <span>Our Manufacturing Facility</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">About Us</span>
+                    <h2 id="aboutTitle">Pioneering <span class="highlight">Electric Mobility</span> in India</h2>
+                    <p id="aboutDesc">Sri SPS E-Bikes (Electric) is committed to providing sustainable and affordable electric mobility solutions. Our mission is to make electric vehicles accessible to every Indian household.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="aboutStat1Num">50,000+</span>
+                            <span class="stat-label" id="aboutStat1Lbl">Happy Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="aboutStat2Num">100+</span>
+                            <span class="stat-label" id="aboutStat2Lbl">Service Centers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="aboutStat3Num">10+</span>
+                            <span class="stat-label" id="aboutStat3Lbl">Models Available</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Our <span class="highlight">Customers</span> Say</h2>
+            </div>
+            <div class="testimonials-grid" id="testimonialsGrid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars" style="color:#ffc107;margin-bottom:8px;">★★★★★</div>
+                        <p>"Best electric scooter I've ever owned. Smooth ride and great battery life!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <span>G6 Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars" style="color:#ffc107;margin-bottom:8px;">★★★★★</div>
+                        <p>"Switched from petrol to Sri SPS E-Bikes. Saving so much on fuel every month!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <span>G5 Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars" style="color:#ffc107;margin-bottom:8px;">★★★★★</div>
+                        <p>"Perfect for daily commute. Low maintenance and excellent performance."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Amit Patel</h4>
+                            <span>Sniper Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="google-review-cta" id="googleReviewCta" style="display:none;">
+                <i class="fab fa-google"></i>
+                <span>See what customers say about us on Google</span>
+                <a href="#" id="googleReviewLink" target="_blank" rel="noopener" class="btn btn-secondary">Read Reviews</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our <span>Gallery</span></h2>
+                <p>Explore our collection of electric scooters and moments</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <p style="color:var(--text-muted);grid-column:1/-1;text-align:center;">Loading gallery...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SRI SPS</h3>
+                    <p id="footerAbout">Save The Earth, Ride With Sri SPS E-Bikes (Electric). Pioneering electric mobility across India with premium electric scooters.</p>
+                    <div class="social-links" id="socialLinks">
+                        <a href="#" id="socialFacebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" id="socialInstagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#" id="socialYoutube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" id="socialWhatsapp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Our Products</h4>
+                    <ul id="footerProducts"></ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list" id="footerContact">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+918220020922" id="footerPhone">+91 82200 20922</a></li>
+                        <li><i class="fas fa-whatsapp"></i> <a href="https://wa.me/919600230055" id="footerWhatsApp">+91 96002 30055</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@srispsebikes.in" id="footerEmail">info@srispsebikes.in</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span id="footerAddress">Coimbatore, Tamil Nadu, India</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p id="footerCopyright">&copy; 2024 Sri SPS E-Bikes (Electric). All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Warranty Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Book Now Modal -->
+    <div class="book-modal" id="bookModal">
+        <div class="book-modal-content">
+            <div class="book-modal-header">
+                <h3><i class="fas fa-motorcycle"></i> Book Your Electric Scooter</h3>
+                <button class="book-modal-close" id="closeBookModal">&times;</button>
+            </div>
+            <form id="bookForm">
+                <input type="hidden" id="bookModelName" value="">
+                <div id="bookProductDetails" class="book-product-details" style="background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;padding:14px;margin-bottom:16px;display:none;">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <div id="bookProductImg" style="width:70px;height:70px;border-radius:10px;overflow:hidden;background:var(--glass);flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-motorcycle" style="font-size:28px;color:var(--primary);"></i>
+                        </div>
+                        <div style="flex:1;min-width:0;">
+                            <h4 id="bookProductName" style="margin:0;font-size:16px;color:var(--text);"></h4>
+                            <div id="bookProductColor" style="margin:4px 0;font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px;"></div>
+                            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;">
+                                <span id="bookProductPrice" style="font-size:15px;font-weight:700;color:var(--primary);"></span>
+                                <span id="bookProductSpeed" style="font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:3px;"><i class="fas fa-tachometer-alt"></i></span>
+                                <span id="bookProductRange" style="font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:3px;"><i class="fas fa-road"></i></span>
+                                <span id="bookProductBattery" style="font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:3px;"><i class="fas fa-car-battery"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-form-group">
+                    <label><i class="fas fa-motorcycle"></i> Model Name *</label>
+                    <select id="bookModelSelect" required>
+                        <option value="">Select Model</option>
+                    </select>
+                </div>
+                <div class="book-form-group">
+                    <label><i class="fas fa-user"></i> Customer Name *</label>
+                    <input type="text" id="bookCustomerName" placeholder="Enter your full name" required>
+                </div>
+                <div class="book-form-group">
+                    <label><i class="fas fa-map-marker-alt"></i> Customer Location *</label>
+                    <input type="text" id="bookLocation" placeholder="Enter your location" required>
+                </div>
+                <div class="book-form-group">
+                    <label><i class="fas fa-phone"></i> Phone Number *</label>
+                    <input type="tel" id="bookPhone" placeholder="Enter 10-digit mobile number" maxlength="10" required>
+                </div>
+                <div class="book-form-group">
+                    <label><i class="fas fa-user-tie"></i> Sold By (Staff Name) *</label>
+                    <input type="text" id="bookStaff" placeholder="Enter staff name" required>
+                </div>
+                <div class="book-form-group">
+                    <label><i class="fas fa-tag"></i> Special Discount (₹)</label>
+                    <input type="number" id="bookDiscount" placeholder="Enter discount amount" min="0">
+                </div>
+                <div class="book-form-group">
+                    <label><i class="fas fa-calculator"></i> Final Price (₹)</label>
+                    <input type="text" id="bookFinalPrice" readonly style="background:var(--dark-surface);font-weight:bold;color:var(--primary);border:1px solid var(--glass-border);">
+                </div>
+                <div class="book-form-group">
+                    <label><i class="fas fa-credit-card"></i> Advance Payment (₹)</label>
+                    <input type="number" id="bookAdvancePayment" placeholder="Enter advance payment amount" min="0">
+                </div>
+                <div class="book-form-group">
+                    <label><i class="fas fa-wallet"></i> Remaining Balance (₹)</label>
+                    <input type="text" id="bookRemainingBalance" readonly style="background:var(--dark-surface);font-weight:bold;color:#ff9800;border:1px solid var(--glass-border);">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block book-submit-btn">
+                    <i class="fab fa-whatsapp"></i> Send Booking via WhatsApp
+                </button>
+                <button type="button" id="downloadPdfBtn" class="btn btn-block book-pdf-btn">
+                    <i class="fas fa-file-pdf"></i> Download Booking PDF
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

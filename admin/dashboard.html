@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Sri SPS E-Bikes (Electric)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>ADMIN</h2>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#dashboard" class="nav-link active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#products" class="nav-link" data-section="products"><i class="fas fa-motorcycle"></i> Products</a></li>
+                <li><a href="#features" class="nav-link" data-section="features"><i class="fas fa-star"></i> Features</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact"><i class="fas fa-phone"></i> Contact</a></li>
+                <li><a href="#images" class="nav-link" data-section="images"><i class="fas fa-image"></i> Images</a></li>
+                <li><a href="#theme" class="nav-link" data-section="theme"><i class="fas fa-palette"></i> Theme</a></li>
+                <li><a href="#settings" class="nav-link" data-section="settings"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#backup" class="nav-link" data-section="backup"><i class="fas fa-database"></i> Backup</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../index.html" target="_blank"><i class="fas fa-external-link-alt"></i> View Website</a>
+            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 id="pageTitle">Dashboard</h2>
+            </div>
+            <div class="topbar-right">
+                <span class="admin-name"><i class="fas fa-user-circle"></i> Admin</span>
+            </div>
+        </header>
+
+        <!-- Dashboard Section -->
+        <section class="content-section active" id="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-motorcycle"></i></div>
+                    <div class="stat-info">
+                        <h3 id="totalProducts">5</h3>
+                        <p>Total Products</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <div class="stat-info">
+                        <h3 id="totalFeatures">6</h3>
+                        <p>Total Features</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-image"></i></div>
+                    <div class="stat-info">
+                        <h3 id="totalImages">0</h3>
+                        <p>Total Images</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-palette"></i></div>
+                    <div class="stat-info">
+                        <h3 id="currentTheme">Default</h3>
+                        <p>Current Theme</p>
+                    </div>
+                </div>
+                <div class="stat-card" id="storageUsage">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-motorcycle"></i> Recent Products</h3>
+                    <div id="recentProducts" class="recent-list">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-info-circle"></i> Quick Info</h3>
+                    <div class="quick-info">
+                        <p><strong>Version:</strong> 1.0.0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="content-section" id="products">
+            <div class="section-header-bar">
+                <h3><i class="fas fa-motorcycle"></i> Manage Products</h3>
+                <button class="btn btn-primary" id="addProductBtn">
+                    <i class="fas fa-plus"></i> Add Product
+                </button>
+            </div>
+            <div class="table-container">
+                <table class="data-table" id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Model</th>
+                            <th>Category</th>
+                            <th>Battery</th>
+                            <th>Speed</th>
+                            <th>Mileage</th>
+                            <th>Charge</th>
+                            <th>Price</th>
+                            <th>Colours</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="content-section" id="features">
+            <div class="section-header-bar">
+                <h3><i class="fas fa-star"></i> Manage Features (Why Choose Us)</h3>
+                <button class="btn btn-primary" id="addFeatureBtn">
+                    <i class="fas fa-plus"></i> Add Feature
+                </button>
+            </div>
+            <div class="table-container">
+                <table class="data-table" id="featuresTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Icon</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="featuresTableBody">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="content-section" id="contact">
+            <div class="section-header-bar">
+                <h3><i class="fas fa-phone"></i> Contact Information</h3>
+            </div>
+            <div class="form-card">
+                <form id="contactForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="contactPhone" placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp Number</label>
+                            <input type="tel" id="contactWhatsApp" placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="contactEmail" placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" id="contactAddress" placeholder="Full Address">
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" id="contactCity" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <input type="text" id="contactState" placeholder="State">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Find Store (Google Maps) URL</label>
+                            <input type="url" id="contactGoogleMaps" placeholder="https://maps.google.com/...">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Google Reviews URL</label>
+                            <input type="url" id="contactGoogleReview" placeholder="https://g.page/...">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Facebook URL</label>
+                            <input type="url" id="contactFacebook" placeholder="https://facebook.com/...">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Instagram URL</label>
+                            <input type="url" id="contactInstagram" placeholder="https://instagram.com/...">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>YouTube URL</label>
+                            <input type="url" id="contactYoutube" placeholder="https://youtube.com/...">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Contact Info
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Images Section -->
+        <section class="content-section" id="images">
+            <div class="section-header-bar">
+                <h3><i class="fas fa-image"></i> Manage Images</h3>
+                <div style="display:flex;gap:8px;">
+                    <button class="btn btn-danger" id="clearImagesBtn" style="padding:8px 14px;font-size:13px;">
+                        <i class="fas fa-trash-alt"></i> Clear All Images
+                    </button>
+                    <button class="btn btn-primary" id="addImageBtn">
+                        <i class="fas fa-upload"></i> Upload Image
+                    </button>
+                </div>
+            </div>
+            <div class="images-grid" id="imagesGrid">
+                <!-- Filled by JS -->
+            </div>
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & Drop images here or click to upload</p>
+                <input type="file" id="imageUpload" accept="image/*" multiple hidden>
+                <button class="btn btn-secondary" id="uploadBtn">Select Files</button>
+            </div>
+        </section>
+
+        <!-- Theme Section -->
+        <section class="content-section" id="theme">
+            <div class="section-header-bar">
+                <h3><i class="fas fa-palette"></i> Theme Settings</h3>
+            </div>
+            <div class="custom-theme-section">
+                <h4><i class="fas fa-paint-brush"></i> Brand Color</h4>
+                <p style="color:var(--text-muted);font-size:13px;margin-bottom:16px;">The site uses just 3 colors — Primary (yours to pick), Secondary background, and Text — for a clean, consistent look. Pick your Primary color below; it's used for buttons, links, badges and highlights across the whole site.</p>
+                <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+                    <div style="text-align:center;">
+                        <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text);">Primary Color</label>
+                        <input type="color" id="colorPrimary" value="#f4590e" style="width:64px;height:64px;border:none;border-radius:12px;cursor:pointer;background:none;">
+                        <small style="display:block;font-size:10px;color:var(--text-muted);margin-top:4px;">Buttons, Links, Badges</small>
+                    </div>
+                    <div style="flex:1;min-width:220px;">
+                        <label style="display:block;font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text);">Live Preview</label>
+                        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:280px;">
+                            <div style="text-align:center;">
+                                <div id="prevPrimary" style="width:100%;height:36px;border-radius:8px;border:1px solid var(--glass-border);"></div>
+                                <small style="font-size:10px;color:var(--text-muted);">Primary</small>
+                            </div>
+                            <div style="text-align:center;">
+                                <div style="width:100%;height:36px;border-radius:8px;border:1px solid var(--glass-border);background:#0a0a0a;"></div>
+                                <small style="font-size:10px;color:var(--text-muted);">Secondary (fixed)</small>
+                            </div>
+                            <div style="text-align:center;">
+                                <div style="width:100%;height:36px;border-radius:8px;border:1px solid var(--glass-border);background:#e4e4e4;"></div>
+                                <small style="font-size:10px;color:var(--text-muted);">Text (fixed)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top:16px;display:flex;gap:10px;align-items:center;">
+                    <button class="btn btn-primary" id="applyCustomTheme">
+                        <i class="fas fa-check"></i> Apply Theme
+                    </button>
+                    <span id="themeAppliedMsg" style="color:var(--primary);font-size:13px;display:none;"><i class="fas fa-check-circle"></i> Applied!</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="content-section" id="settings">
+            <div class="section-header-bar">
+                <h3><i class="fas fa-cog"></i> Admin Settings</h3>
+            </div>
+            <div class="form-card">
+                <form id="settingsForm">
+                    <h4>Change Password</h4>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" id="currentPassword" placeholder="Enter current password">
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" id="newPassword" placeholder="Enter new password">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-key"></i> Update Password
+                    </button>
+                </form>
+
+                <hr class="divider">
+
+                <h4>Website Settings</h4>
+                <form id="websiteSettingsForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Company Logo (shown on Home Page &amp; PDF)</label>
+                            <div class="logo-upload-area">
+                                <div class="logo-preview" id="logoPreview" style="width:120px;height:120px;border:2px dashed var(--glass-border);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:var(--glass);margin-bottom:10px;overflow:hidden;">
+                                    <i class="fas fa-image" id="logoPlaceholderIcon" style="font-size:36px;color:var(--text-muted);"></i>
+                                    <img id="logoPreviewImg" src="" alt="Logo" style="display:none;width:100%;height:100%;object-fit:contain;">
+                                </div>
+                                <input type="file" id="logoUpload" accept="image/*" hidden>
+                                <button type="button" class="btn btn-sm btn-secondary" id="uploadLogoBtn">
+                                    <i class="fas fa-upload"></i> Upload Logo
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger" id="removeLogoBtn" style="margin-left:6px;display:none;">
+                                    <i class="fas fa-trash"></i> Remove
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" id="companyName" placeholder="e.g., Sri SPS E-Bikes (Electric)">
+                        </div>
+                        <div class="form-group">
+                            <label>Website Tagline</label>
+                            <input type="text" id="websiteTagline" placeholder="Website Tagline">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Website Title</label>
+                            <input type="text" id="websiteTitle" placeholder="Website Title">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Features Section Title</label>
+                            <input type="text" id="featuresTitle" placeholder="e.g., The Sri SPS E-Bikes Advantage">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Features Section Subtitle</label>
+                            <input type="text" id="featuresSubtitle" placeholder="e.g., Experience the best in electric mobility">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Meta Description</label>
+                            <textarea id="metaDescription" rows="3" placeholder="SEO Meta Description"></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Footer Copyright Text</label>
+                            <input type="text" id="copyrightText" placeholder="e.g., © 2025 Sri SPS E-Bikes (Electric). All Rights Reserved.">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Settings
+                    </button>
+                </form>
+
+                <hr class="divider">
+
+                <h4>Hero Slider Settings</h4>
+                <form id="heroSettingsForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <h5 style="color:var(--primary);margin-bottom:12px;">Slide 1</h5>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 1 Title</label>
+                            <input type="text" id="heroSlide1Title" placeholder="e.g., Ride The Future With Sri SPS E-Bikes">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 1 Subtitle</label>
+                            <input type="text" id="heroSlide1Subtitle" placeholder="e.g., Experience the thrill of electric mobility.">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 1 Badge Text</label>
+                            <input type="text" id="heroSlide1Badge" placeholder="e.g., New Launch 2024">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 1 Background Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide1Preview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <span style="color:var(--text-muted);font-size:12px;">No image</span>
+                                </div>
+                                <input type="file" id="heroSlide1Image" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide1Image').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide1Remove" style="display:none;" onclick="removeHeroSlideImage(1)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 1 Product Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide1ProductPreview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <i class="fas fa-motorcycle" style="font-size:24px;color:var(--text-muted);"></i>
+                                </div>
+                                <input type="file" id="heroSlide1ProductImage" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide1ProductImage').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide1ProductRemove" style="display:none;"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <p style="color:var(--text-muted);font-size:11px;margin-top:4px;">Scooter/product image shown on the right</p>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <h5 style="color:var(--primary);margin-bottom:12px;">Slide 2</h5>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 2 Title</label>
+                            <input type="text" id="heroSlide2Title" placeholder="e.g., Go Green, Go Electric">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 2 Subtitle</label>
+                            <input type="text" id="heroSlide2Subtitle" placeholder="e.g., Save up to 80% on fuel costs.">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 2 Badge Text</label>
+                            <input type="text" id="heroSlide2Badge" placeholder="e.g., High Speed">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 2 Background Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide2Preview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <span style="color:var(--text-muted);font-size:12px;">No image</span>
+                                </div>
+                                <input type="file" id="heroSlide2Image" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide2Image').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide2Remove" style="display:none;" onclick="removeHeroSlideImage(2)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 2 Product Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide2ProductPreview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <i class="fas fa-motorcycle" style="font-size:24px;color:var(--text-muted);"></i>
+                                </div>
+                                <input type="file" id="heroSlide2ProductImage" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide2ProductImage').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide2ProductRemove" style="display:none;"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <p style="color:var(--text-muted);font-size:11px;margin-top:4px;">Scooter/product image shown on the right</p>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <h5 style="color:var(--primary);margin-bottom:12px;">Slide 3</h5>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 3 Title</label>
+                            <input type="text" id="heroSlide3Title" placeholder="e.g., Save The Earth, Ride Smart">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 3 Subtitle</label>
+                            <input type="text" id="heroSlide3Subtitle" placeholder="e.g., Comfortable daily commute with zero pollution.">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 3 Badge Text</label>
+                            <input type="text" id="heroSlide3Badge" placeholder="e.g., Comfort Speed">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 3 Background Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide3Preview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <span style="color:var(--text-muted);font-size:12px;">No image</span>
+                                </div>
+                                <input type="file" id="heroSlide3Image" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide3Image').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide3Remove" style="display:none;" onclick="removeHeroSlideImage(3)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 3 Product Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide3ProductPreview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <i class="fas fa-motorcycle" style="font-size:24px;color:var(--text-muted);"></i>
+                                </div>
+                                <input type="file" id="heroSlide3ProductImage" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide3ProductImage').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide3ProductRemove" style="display:none;"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <p style="color:var(--text-muted);font-size:11px;margin-top:4px;">Scooter/product image shown on the right</p>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <h5 style="color:var(--primary);margin-bottom:12px;">Slide 4</h5>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 4 Title</label>
+                            <input type="text" id="heroSlide4Title" placeholder="e.g., Ride Longer, Charge Smarter">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 4 Subtitle</label>
+                            <input type="text" id="heroSlide4Subtitle" placeholder="e.g., Extended battery range for uninterrupted journeys.">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 4 Badge Text</label>
+                            <input type="text" id="heroSlide4Badge" placeholder="e.g., Long Range">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 4 Background Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide4Preview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <span style="color:var(--text-muted);font-size:12px;">No image</span>
+                                </div>
+                                <input type="file" id="heroSlide4Image" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide4Image').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide4Remove" style="display:none;" onclick="removeHeroSlideImage(4)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 4 Product Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide4ProductPreview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <i class="fas fa-motorcycle" style="font-size:24px;color:var(--text-muted);"></i>
+                                </div>
+                                <input type="file" id="heroSlide4ProductImage" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide4ProductImage').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide4ProductRemove" style="display:none;"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <p style="color:var(--text-muted);font-size:11px;margin-top:4px;">Scooter/product image shown on the right</p>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <h5 style="color:var(--primary);margin-bottom:12px;">Slide 5</h5>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 5 Title</label>
+                            <input type="text" id="heroSlide5Title" placeholder="e.g., Power Your Daily Ride">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 5 Subtitle</label>
+                            <input type="text" id="heroSlide5Subtitle" placeholder="e.g., The perfect companion for everyday commutes.">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 5 Badge Text</label>
+                            <input type="text" id="heroSlide5Badge" placeholder="e.g., Best Seller">
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 5 Background Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide5Preview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <span style="color:var(--text-muted);font-size:12px;">No image</span>
+                                </div>
+                                <input type="file" id="heroSlide5Image" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide5Image').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide5Remove" style="display:none;" onclick="removeHeroSlideImage(5)"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Slide 5 Product Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="heroSlide5ProductPreview" style="width:100%;height:80px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <i class="fas fa-motorcycle" style="font-size:24px;color:var(--text-muted);"></i>
+                                </div>
+                                <input type="file" id="heroSlide5ProductImage" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('heroSlide5ProductImage').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="heroSlide5ProductRemove" style="display:none;"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <p style="color:var(--text-muted);font-size:11px;margin-top:4px;">Scooter/product image shown on the right</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Hero Settings
+                    </button>
+                </form>
+
+                <hr class="divider">
+
+                <h4>About Us Settings</h4>
+                <form id="aboutSettingsForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>About Title</label>
+                            <input type="text" id="aboutTitle" placeholder="e.g., Pioneering Electric Mobility in India">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>About Description</label>
+                            <textarea id="aboutDescription" rows="3" placeholder="About your company description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Happy Customers</label>
+                            <input type="text" id="aboutStat1" placeholder="e.g., 50,000+">
+                        </div>
+                        <div class="form-group">
+                            <label>Happy Customers Label</label>
+                            <input type="text" id="aboutStat1Label" placeholder="e.g., Happy Customers">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Centers</label>
+                            <input type="text" id="aboutStat2" placeholder="e.g., 100+">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Centers Label</label>
+                            <input type="text" id="aboutStat2Label" placeholder="e.g., Service Centers">
+                        </div>
+                        <div class="form-group">
+                            <label>Models Available</label>
+                            <input type="text" id="aboutStat3" placeholder="e.g., 10+">
+                        </div>
+                        <div class="form-group">
+                            <label>Models Available Label</label>
+                            <input type="text" id="aboutStat3Label" placeholder="e.g., Models Available">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>About Image</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="aboutImagePreview" style="width:100%;height:150px;border:2px dashed var(--glass-border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <span style="color:var(--text-muted);font-size:12px;">No image</span>
+                                </div>
+                                <input type="file" id="aboutImageUpload" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('aboutImageUpload').click()"><i class="fas fa-upload"></i> Upload Image</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="aboutImageRemove" style="display:none;"><i class="fas fa-trash"></i> Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save About Settings
+                    </button>
+                </form>
+
+                <hr class="divider">
+
+                <h4><i class="fab fa-google"></i> Testimonials / Google Reviews</h4>
+                <p style="color:var(--text-muted);font-size:13px;margin-bottom:16px;">Add customer reviews that appear in the "What Our Customers Say" section.</p>
+                <div id="testimonialList" style="margin-bottom:16px;"></div>
+                <form id="testimonialForm" novalidate>
+                    <input type="hidden" id="testimonialEditIndex" value="-1">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Customer Name *</label>
+                            <input type="text" id="testimonialName" placeholder="e.g., Rajesh Kumar" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Designation / Model</label>
+                            <input type="text" id="testimonialDesignation" placeholder="e.g., G6 Owner">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Review Text *</label>
+                            <textarea id="testimonialText" rows="3" placeholder="Enter customer review" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Star Rating</label>
+                            <select id="testimonialRating">
+                                <option value="5">★★★★★ (5 Stars)</option>
+                                <option value="4">★★★★☆ (4 Stars)</option>
+                                <option value="3">★★★☆☆ (3 Stars)</option>
+                                <option value="2">★★☆☆☆ (2 Stars)</option>
+                                <option value="1">★☆☆☆☆ (1 Star)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Customer Photo (Optional)</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <div id="testimonialPhotoPreview" style="width:60px;height:60px;border:2px dashed var(--glass-border);border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px;">
+                                    <i class="fas fa-user" style="font-size:20px;color:var(--text-muted);"></i>
+                                </div>
+                                <input type="file" id="testimonialPhoto" accept="image/*" hidden>
+                                <div style="display:flex;gap:6px;">
+                                    <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('testimonialPhoto').click()"><i class="fas fa-upload"></i> Upload</button>
+                                    <button type="button" class="btn btn-sm btn-danger" id="testimonialPhotoRemove" style="display:none;"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:8px;">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> <span id="testimonialSubmitText">Add Review</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="testimonialCancelBtn" style="display:none;">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </form>
+
+                <hr class="divider">
+
+                <h4><i class="fas fa-piggy-bank"></i> Savings Section Settings</h4>
+                <p style="color:var(--text-muted);font-size:13px;margin-bottom:16px;">Edit the "Calculate Your Savings" section content.</p>
+                <form id="savingsSettingsForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Section Tag</label>
+                            <input type="text" id="savingsTag" placeholder="e.g., Calculate Your Savings">
+                        </div>
+                        <div class="form-group">
+                            <label>Section Title</label>
+                            <input type="text" id="savingsTitle" placeholder="e.g., How Much Can You Save?">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Section Subtitle</label>
+                            <input type="text" id="savingsSubtitle" placeholder="e.g., Switch to electric and see your savings grow">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Card 1</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <input type="text" id="savingsCard1Title" placeholder="Title (e.g., Fuel Savings)" style="margin-bottom:6px;">
+                                <input type="text" id="savingsCard1Amount" placeholder="Amount (e.g., ₹60,000/year)" style="margin-bottom:6px;">
+                                <input type="text" id="savingsCard1Desc" placeholder="Description (e.g., Average savings on fuel costs)">
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Card 2</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <input type="text" id="savingsCard2Title" placeholder="Title (e.g., Maintenance Savings)" style="margin-bottom:6px;">
+                                <input type="text" id="savingsCard2Amount" placeholder="Amount (e.g., ₹15,000/year)" style="margin-bottom:6px;">
+                                <input type="text" id="savingsCard2Desc" placeholder="Description (e.g., No engine oil, filters, etc.)">
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Card 3</label>
+                            <div style="background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);">
+                                <input type="text" id="savingsCard3Title" placeholder="Title (e.g., Carbon Saved)" style="margin-bottom:6px;">
+                                <input type="text" id="savingsCard3Amount" placeholder="Amount (e.g., 2.5 tons/year)" style="margin-bottom:6px;">
+                                <input type="text" id="savingsCard3Desc" placeholder="Description (e.g., Your contribution to clean air)">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Savings Settings
+                    </button>
+                </form>
+
+                <hr class="divider">
+
+                <h4>Data Management</h4>
+                <div class="btn-group">
+                    <button class="btn btn-secondary" id="exportDataBtn">
+                        <i class="fas fa-download"></i> Export Data
+                    </button>
+                    <button class="btn btn-secondary" id="importDataBtn">
+                        <i class="fas fa-upload"></i> Import Data
+                    </button>
+                    <button class="btn btn-danger" id="resetDataBtn">
+                        <i class="fas fa-trash"></i> Reset All Data
+                    </button>
+                </div>
+                <input type="file" id="importFile" accept=".json" hidden>
+            </div>
+        </section>
+
+        <!-- Backup Section -->
+        <section class="content-section" id="backup">
+            <div class="section-header-bar">
+                <h3><i class="fas fa-database"></i> Backup & Restore</h3>
+            </div>
+            <div class="form-card" style="text-align:center;padding:40px 20px;">
+                <div style="margin-bottom:30px;">
+                    <i class="fas fa-cloud-upload-alt" style="font-size:48px;color:var(--primary);margin-bottom:15px;display:block;"></i>
+                    <h4 style="color:var(--white);margin-bottom:8px;">Save Your Data Before Switching Systems</h4>
+                    <p style="color:var(--text-muted);font-size:14px;">localStorage only saves in your browser. To move data to another computer, Export first then Import on the new system.</p>
+                </div>
+                <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                    <button class="btn btn-primary" id="exportDataBtn2" style="min-width:200px;padding:14px 28px;font-size:16px;">
+                        <i class="fas fa-download"></i> Export Data (JSON)
+                    </button>
+                    <button class="btn btn-secondary" id="importDataBtn2" style="min-width:200px;padding:14px 28px;font-size:16px;">
+                        <i class="fas fa-upload"></i> Import Data (JSON)
+                    </button>
+                </div>
+                <input type="file" id="importFile2" accept=".json" hidden>
+                <div style="margin-top:30px;padding:16px;background:var(--glass);border-radius:12px;border:1px solid var(--glass-border);text-align:left;">
+                    <h5 style="color:var(--white);margin-bottom:10px;"><i class="fas fa-info-circle" style="color:var(--accent);"></i> How to Transfer Data</h5>
+                    <ol style="color:var(--text-muted);font-size:13px;line-height:2;padding-left:20px;">
+                        <li><strong>System 1:</strong> Click <span style="color:var(--primary);">Export Data</span> → save the JSON file</li>
+                        <li>Copy the whole project folder + the JSON file to a USB/new system</li>
+                        <li><strong>System 2:</strong> Open admin → click <span style="color:var(--accent);">Import Data</span> → select the JSON file</li>
+                        <li>Page reloads — all products, images, settings restored!</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add/Edit Product Modal -->
+    <div class="modal" id="featureModal">
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <h3 id="featureModalTitle">Add Feature</h3>
+                <button class="modal-close" id="closeFeatureModal">&times;</button>
+            </div>
+            <form id="featureForm" novalidate>
+                <input type="hidden" id="featureId">
+                <div class="form-group">
+                    <label>Feature Title *</label>
+                    <input type="text" id="featureTitle" placeholder="e.g., Eco Friendly" required>
+                </div>
+                <div class="form-group">
+                    <label>Icon (Image Upload or FontAwesome)</label>
+                    <div class="icon-upload-row">
+                        <div class="icon-preview-box" id="featureIconPreview">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div style="flex:1;">
+                            <input type="file" id="featureIconFile" accept="image/*" style="display:none;">
+                            <button type="button" class="btn btn-secondary" id="featureIconUploadBtn" style="width:100%;margin-bottom:6px;">
+                                <i class="fas fa-cloud-upload-alt"></i> Upload Icon Image
+                            </button>
+                            <small style="color:var(--text-muted);font-size:11px;display:block;">PNG/SVG/JPG — Square image works best</small>
+                            <div style="text-align:center;color:var(--text-muted);font-size:11px;margin:4px 0;">OR</div>
+                            <input type="text" id="featureIcon" placeholder="FontAwesome class e.g. fas fa-leaf">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description *</label>
+                    <textarea id="featureDesc" rows="3" placeholder="Feature description" required></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelFeatureModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Feature
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="productModalTitle">Add Product</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <form id="productForm" novalidate>
+                <input type="hidden" id="productId">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Model Name *</label>
+                        <input type="text" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="productCategory" required>
+                            <option value="high-speed">High Speed</option>
+                            <option value="comfort-speed">Comfort Speed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Battery Capacity *</label>
+                        <select id="productBatteryCapacity" required>
+                            <option value="">Select Battery</option>
+                            <option value="48V 30AH">48V 30AH</option>
+                            <option value="48V 45AH">48V 45AH</option>
+                            <option value="60V 30AH">60V 30AH</option>
+                            <option value="60V 45AH">60V 45AH</option>
+                            <option value="51V 30AH">51V 30AH</option>
+                            <option value="64V 30AH">64V 30AH</option>
+                            <option value="64V 52AH">64V 52AH</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Battery Type</label>
+                        <select id="productBatteryType">
+                            <option value="Smart LFP">Smart LFP</option>
+                            <option value="Li-ion">Li-ion</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Top Speed (km/h) *</label>
+                        <input type="number" id="productSpeed" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mileage (km) *</label>
+                        <select id="productRange" required>
+                            <option value="">Select Mileage</option>
+                            <option value="50-60">50-60 km</option>
+                            <option value="65-75">65-75 km</option>
+                            <option value="80-90">80-90 km</option>
+                            <option value="100-120">100-120 km</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Charging Time (hours)</label>
+                        <input type="text" id="productChargeTime" placeholder="e.g., 3-4">
+                    </div>
+                    <div class="form-group">
+                        <label>Price (₹) *</label>
+                        <input type="number" id="productPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Colours</label>
+                        <div id="colorList" style="display:flex;flex-direction:column;gap:6px;margin-bottom:8px;"></div>
+                        <div style="background:var(--glass);padding:10px;border-radius:10px;border:1px solid var(--glass-border);">
+                            <div style="display:flex;gap:6px;margin-bottom:6px;">
+                                <input type="color" id="productColor" value="#00c853" style="width:50px;height:36px;border:none;border-radius:8px;cursor:pointer;">
+                                <input type="text" id="productColorName" placeholder="Colour name" style="flex:1;">
+                            </div>
+                            <div style="display:flex;gap:6px;margin-bottom:6px;">
+                                <select id="productColorAvailable" style="flex:1;">
+                                    <option value="yes">Available</option>
+                                    <option value="no">Sold Out</option>
+                                </select>
+                            </div>
+                            <div style="display:flex;gap:6px;align-items:center;">
+                                <label style="font-size:12px;margin:0;cursor:pointer;background:var(--glass);padding:6px 10px;border-radius:8px;border:1px solid var(--glass-border);">
+                                    <i class="fas fa-image"></i> Colour Image
+                                    <input type="file" id="productColorImage" accept="image/*" style="display:none;" onchange="previewColorImage(event)">
+                                </label>
+                                <div id="colorImagePreview" style="width:40px;height:40px;border-radius:8px;overflow:hidden;display:none;border:1px solid var(--glass-border);"></div>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-primary" id="addColorBtn" style="margin-top:8px;width:100%;"><i class="fas fa-plus"></i> Add Colour</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Badge Text</label>
+                        <select id="productBadge">
+                            <option value="">No Badge</option>
+                            <option value="New">New</option>
+                            <option value="Popular">Popular</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Description</label>
+                        <textarea id="productDesc" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Product
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Image Upload Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <h3>Upload Image</h3>
+                <button class="modal-close" id="closeImageModal">&times;</button>
+            </div>
+            <form id="imageUploadForm" novalidate>
+                <div class="form-group">
+                    <label>Image Name</label>
+                    <input type="text" id="imageName" placeholder="e.g., Hero Banner">
+                </div>
+                <div class="form-group">
+                    <label>Image Type</label>
+                    <select id="imageType">
+                        <option value="banner">Banner</option>
+                        <option value="product">Product</option>
+                        <option value="about">About</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select Image</label>
+                    <div class="image-upload-area">
+                        <input type="file" id="imageFile" accept="image/*" hidden>
+                        <div class="image-preview" id="imageUploadPreview">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Click to select image</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelImageModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-upload"></i> Upload
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Action completed</span>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
